@@ -25,81 +25,81 @@
 
         <ImageView
             android:id="@+id/imageView1"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:layout_marginLeft="17dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginLeft="17dp" />
 
         <ImageView
             android:id="@+id/imageView2"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:layout_marginLeft="30dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginLeft="30dp" />
 
         <ImageView
             android:id="@+id/imageView3"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            android:layout_marginLeft="25dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginLeft="25dp" />
 
         <ImageView
             android:id="@+id/imageView4"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="17dp"
-            android:layout_marginTop="35dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginTop="35dp" />
 
         <ImageView
             android:id="@+id/imageView5"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginTop="35dp"
-            android:layout_marginLeft="30dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginLeft="30dp" />
 
         <ImageView
             android:id="@+id/imageView6"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="35dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginTop="35dp" />
 
         <ImageView
             android:id="@+id/imageView7"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="17dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginLeft="17dp" />
 
         <ImageView
             android:id="@+id/imageView8"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginTop="30dp" />
 
         <ImageView
             android:id="@+id/imageView9"
+            android:onClick="dropIn"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/red" />
+            android:layout_marginTop="30dp" />
 
 
     </androidx.gridlayout.widget.GridLayout>
