@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
             if (redTurn) {
                 redTurn = false;
                 gameState[tappedCounter] = red;
-                counter.setImageResource(R.drawable.red);
+                counter.setImageResource(R.drawable.guinea1);
             } else {
                 redTurn = true;
                 gameState[tappedCounter] = yellow;
-                counter.setImageResource(R.drawable.yellow);
+                counter.setImageResource(R.drawable.guinea2);
             }
             counter.animate().translationYBy(2000).setDuration(200);
             checkIfWon();
@@ -52,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
         for (int[] winPositions : winningPositions) {
             if (gameState[winPositions[0]] == gameState[winPositions[1]] && gameState[winPositions[0]] == gameState[winPositions[2]] && gameState[winPositions[0]] != 0) {
                 if (redTurn) {
-                    gameStatusText.setText("Yellow Wins. Play again?");
+                    gameStatusText.setTranslationX(-2000);
+                    gameStatusText.setText("Hammie Wins. Play again?");
+                    gameStatusText.animate().translationXBy(2000).setDuration(500).rotation(1800);
                 } else {
-                    gameStatusText.setText("Red Wins. Play again?");
+                    gameStatusText.setTranslationX(-2000);
+                    gameStatusText.setText("Sparkle Wins. Play again?");
+                    gameStatusText.animate().translationXBy(2000).setDuration(500).rotation(1800);
                 }
                 gameStateActive = false;
             }
