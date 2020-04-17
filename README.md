@@ -1,6 +1,6 @@
-#Tic-Tac-Toe with Connect-4 type animation and icons
+# Tic-Tac-Toe with Connect-4 type animation and icons
 
-##Main code from this is:
+## code of interest:
 
 
 ```
