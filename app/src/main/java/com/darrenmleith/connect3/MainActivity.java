@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     boolean redTurn = true;
     int red = 1;
     int yellow = 2;
-    int[] gameboard = {0,0,0,0,0,0,0,0,0};
+    int[] gameboard = {3,4,5,6,7,8,9,10,11};
+    int[][] winningPositions = {{0,1,2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void playAgain(View v) {
         resetBoard();
         for (int i = 0; i < 9; i++) {
-            gameboard[i] = 0;
+            gameboard[i] = i+3;
         }
     }
 
@@ -34,32 +35,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void dropIn(View view) {
+        ImageView counter = (ImageView) view;
+        counter.setTranslationY(-2000);
+        counter.setClickable(false);
+        int counterInt = Integer.parseInt(counter.getTag().toString());
+
         if (redTurn) {
             redTurn = false;
-            ImageView counter = (ImageView) view;
-            counter.setClickable(false);
-            System.out.println(counter.getTag());
-            int counterInt = Integer.parseInt((String) counter.getTag());
             gameboard[counterInt] = red;
-            counter.setTranslationY(-2000);
             counter.setImageResource(R.drawable.red);
-            counter.animate().translationYBy(2000).setDuration(300);
         } else {
             redTurn = true;
-            ImageView counter = (ImageView) view;
             counter.setClickable(false);
-            int counterInt = Integer.parseInt((String) counter.getTag());
             gameboard[counterInt] = yellow;
-            counter.setTranslationY(-2000);
             counter.setImageResource(R.drawable.yellow);
-            counter.animate().translationYBy(2000).setDuration(300);
         }
+        counter.animate().translationYBy(2000).setDuration(300);
         testWhoHasWon();
     }
 
-    public void testWhoHasWon() {
-        TextView gameStatusText = findViewById(R.id.textGameStatus);
 
+    void testWhoHasWon() {
+        TextView gameStatusText = findViewById(R.id.textGameStatus);
+        for (int[] winPositions: winningPositions) {
+            if (gameboard[winPositions[0]] == gameboard[winPositions[1]] && gameboard[winPositions[0]] == gameboard[winPositions[2]]) {
+                if (redTurn) {
+                    gameStatusText.setText("Yellow Wins. Play again?");
+                } else {
+                    gameStatusText.setText("Red Wins. Play again?");
+                }
+            }
+        }
+    }
+
+
+    //original attempt. Compare this to above !
+    public void testOld() {
+        TextView gameStatusText = findViewById(R.id.textGameStatus);
         //iterate over all ImageView objects to check their tag values
         if ((gameboard[0] == red && gameboard[1] == red && gameboard[2] == red) ||
                 (gameboard[3] == red && gameboard[4] == red && gameboard[5] == red) ||
