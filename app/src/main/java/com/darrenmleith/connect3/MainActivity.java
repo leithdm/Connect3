@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     boolean redTurn = true;
     int red = 1;
     int yellow = 2;
-    int[] gameboard = {3,4,5,6,7,8,9,10,11};
+    int[] gameboard = {0,0,0,0,0,0,0,0,0};
     int[][] winningPositions = {{0,1,2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
 
     @Override
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void playAgain(View v) {
         resetBoard();
         for (int i = 0; i < 9; i++) {
-            gameboard[i] = i+3;
+            gameboard[i] = 0;
         }
     }
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     void testWhoHasWon() {
         TextView gameStatusText = findViewById(R.id.textGameStatus);
         for (int[] winPositions: winningPositions) {
-            if (gameboard[winPositions[0]] == gameboard[winPositions[1]] && gameboard[winPositions[0]] == gameboard[winPositions[2]]) {
+            if (gameboard[winPositions[0]] == gameboard[winPositions[1]] && gameboard[winPositions[0]] == gameboard[winPositions[2]] && gameboard[winPositions[0]] != 0) {
                 if (redTurn) {
                     gameStatusText.setText("Yellow Wins. Play again?");
                 } else {
